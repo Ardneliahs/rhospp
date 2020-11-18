@@ -1,0 +1,17 @@
+[root@registry1 ~]# sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+INDEX       NAME                                                       DESCRIPTION                                       STARS   OFFICIAL   AUTOMATED
+redhat.io   registry.redhat.io/rhceph/rhceph-3-rhel7                   Red Hat Ceph Storage 3 (selectable daemon si...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-2-rhel7                   Red Hat Ceph Storage 2 (selectable daemon si...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-1.3-rhel7                 Red Hat Ceph Storage 1.3 (selectable daemon ...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-4                         Red Hat Ceph Storage 4 (selectable daemon si...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-4-dashboard-rhel8         Grafana integration image for Ceph Dashboard      0
+redhat.io   registry.redhat.io/rhceph/rhceph-3-dashboard-rhel7         Red Hat Ceph Storage 3 Dashboard                  0
+redhat.io   registry.redhat.io/rhceph/ansible-runner-rhel8             Automation interface for RHCS 4 UI installer...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-4-rhel8                   Red Hat Ceph Storage 4 (selectable daemon si...   0
+redhat.io   registry.redhat.io/rhceph-alpha/rhceph-5-rhel8             Red Hat Ceph Storage 5 alpha (selectable dae...   0
+redhat.io   registry.redhat.io/rhceph-beta/rhceph-4-dashboard-rhel8    Grafana integration image for Ceph Dashboard      0
+redhat.io   registry.redhat.io/rhceph-beta/rhceph-4-rhel8              Red Hat Ceph Storage 4 beta (selectable daem...   0
+redhat.io   registry.redhat.io/rhceph-alpha/rhceph-5-dashboard-rhel8   Grafana integration image for Ceph Dashboard      0
+redhat.io   registry.redhat.io/rhceph-beta/ansible-runner-rhel8        Automation interface for RHCS 4 UI installer...   0
+redhat.io   registry.redhat.io/ocs4/rhceph-rhel8                       Red Hat Ceph Image for OCS                        0
+[root@registry1 ~]#
