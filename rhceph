@@ -7,7 +7,7 @@ redhat.io   registry.redhat.io/rhceph/rhceph-4                         Red Hat C
 redhat.io   registry.redhat.io/rhceph/rhceph-4-dashboard-rhel8         Grafana integration image for Ceph Dashboard      0
 redhat.io   registry.redhat.io/rhceph/rhceph-3-dashboard-rhel7         Red Hat Ceph Storage 3 Dashboard                  0
 redhat.io   registry.redhat.io/rhceph/ansible-runner-rhel8             Automation interface for RHCS 4 UI installer...   0
-redhat.io   registry.redhat.io/rhceph/rhceph-4-rhel8                   Red Hat Ceph Storage 4 (selectable daemon si...   0
+redhat.io   registry.redhat.io/rhceph/rhceph-4-rhel8:4                 Red Hat Ceph Storage 4 (selectable daemon si...   0
 redhat.io   registry.redhat.io/rhceph-alpha/rhceph-5-rhel8             Red Hat Ceph Storage 5 alpha (selectable dae...   0
 redhat.io   registry.redhat.io/rhceph-beta/rhceph-4-dashboard-rhel8    Grafana integration image for Ceph Dashboard      0
 redhat.io   registry.redhat.io/rhceph-beta/rhceph-4-rhel8              Red Hat Ceph Storage 4 beta (selectable daem...   0
