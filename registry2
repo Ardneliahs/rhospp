@@ -1,0 +1,616 @@
+Unable to use key file "C:\Users\shail\Desktop\shaggyprivate.ppk" (unable to ope                                                                                        n file)
+login as: root
+root@192.168.4.152's password:
+Last login: Wed Nov 18 09:50:49 2020
+[root@registry2 ~]# yum install docker-distribution -y;systemctl start docker-di                                                                                        stribution
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+ * base: mirrors.vhost.vn
+ * extras: mirrors.vhost.vn
+ * updates: mirrors.vhost.vn
+base                                                     | 3.6 kB     00:00
+extras                                                   | 2.9 kB     00:00
+updates                                                  | 2.9 kB     00:00
+(1/4): base/7/x86_64/group_gz                              | 153 kB   00:01
+(2/4): base/7/x86_64/primary_db                            | 6.1 MB   00:02
+(3/4): extras/7/x86_64/primary_db                          | 222 kB   00:02
+(4/4): updates/7/x86_64/primary_db                         | 2.5 MB   00:05
+Resolving Dependencies
+--> Running transaction check
+---> Package docker-distribution.x86_64 0:2.6.2-2.git48294d9.el7 will be install                                                                                        ed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch       Version                    Repository  Size
+================================================================================
+Installing:
+ docker-distribution     x86_64     2.6.2-2.git48294d9.el7     extras     3.5 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 3.5 M
+Installed size: 12 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/extras/packages/docker-distribution-2.6.2-2.git                                                                                        48294d9.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for docker-distribution-2.6.2-2.git48294d9.el7.x86_64.rpm is not inst                                                                                        alled
+docker-distribution-2.6.2-2.git48294d9.el7.x86_64.rpm      | 3.5 MB   00:01
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org                                                                                        >"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-5.1804.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : docker-distribution-2.6.2-2.git48294d9.el7.x86_64            1/1
+  Verifying  : docker-distribution-2.6.2-2.git48294d9.el7.x86_64            1/1
+
+Installed:
+  docker-distribution.x86_64 0:2.6.2-2.git48294d9.el7
+
+Complete!
+[root@registry2 ~]# vi /etc/docker-distribution/registry/config.yml
+[root@registry2 ~]# systemctl restart docker-distribution
+[root@registry2 ~]# systemctl stop firewalld
+[root@registry2 ~]# docker
+-bash: docker: command not found
+[root@registry2 ~]# yum install podman-docker
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.vhost.vn
+ * extras: mirrors.vhost.vn
+ * updates: mirrors.vhost.vn
+Resolving Dependencies
+--> Running transaction check
+---> Package podman-docker.noarch 0:1.6.4-22.el7_9 will be installed
+--> Processing Dependency: podman = 1.6.4-22.el7_9 for package: podman-docker-1.                                                                                        6.4-22.el7_9.noarch
+--> Running transaction check
+---> Package podman.x86_64 0:1.6.4-22.el7_9 will be installed
+--> Processing Dependency: slirp4netns >= 0.4.0-1 for package: podman-1.6.4-22.e                                                                                        l7_9.x86_64
+--> Processing Dependency: runc >= 1.0.0-57 for package: podman-1.6.4-22.el7_9.x                                                                                        86_64
+--> Processing Dependency: containers-common >= 0.1.29-3 for package: podman-1.6                                                                                        .4-22.el7_9.x86_64
+--> Processing Dependency: containernetworking-plugins >= 0.8.1-1 for package: p                                                                                        odman-1.6.4-22.el7_9.x86_64
+--> Processing Dependency: nftables for package: podman-1.6.4-22.el7_9.x86_64
+--> Processing Dependency: fuse-overlayfs for package: podman-1.6.4-22.el7_9.x86                                                                                        _64
+--> Processing Dependency: container-selinux for package: podman-1.6.4-22.el7_9.                                                                                        x86_64
+--> Processing Dependency: conmon for package: podman-1.6.4-22.el7_9.x86_64
+--> Running transaction check
+---> Package conmon.x86_64 2:2.0.8-1.el7 will be installed
+---> Package container-selinux.noarch 2:2.119.2-1.911c772.el7_8 will be installe                                                                                        d
+--> Processing Dependency: selinux-policy-targeted >= 3.13.1-216.el7 for package                                                                                        : 2:container-selinux-2.119.2-1.911c772.el7_8.noarch
+--> Processing Dependency: selinux-policy-base >= 3.13.1-216.el7 for package: 2:                                                                                        container-selinux-2.119.2-1.911c772.el7_8.noarch
+--> Processing Dependency: selinux-policy >= 3.13.1-216.el7 for package: 2:conta                                                                                        iner-selinux-2.119.2-1.911c772.el7_8.noarch
+--> Processing Dependency: policycoreutils-python for package: 2:container-selin                                                                                        ux-2.119.2-1.911c772.el7_8.noarch
+---> Package containernetworking-plugins.x86_64 0:0.8.3-3.el7.centos will be ins                                                                                        talled
+---> Package containers-common.x86_64 1:0.1.40-11.el7_8 will be installed
+--> Processing Dependency: subscription-manager for package: 1:containers-common                                                                                        -0.1.40-11.el7_8.x86_64
+---> Package fuse-overlayfs.x86_64 0:0.7.2-6.el7_8 will be installed
+--> Processing Dependency: libfuse3.so.3(FUSE_3.2)(64bit) for package: fuse-over                                                                                        layfs-0.7.2-6.el7_8.x86_64
+--> Processing Dependency: libfuse3.so.3(FUSE_3.0)(64bit) for package: fuse-over                                                                                        layfs-0.7.2-6.el7_8.x86_64
+--> Processing Dependency: libfuse3.so.3()(64bit) for package: fuse-overlayfs-0.                                                                                        7.2-6.el7_8.x86_64
+---> Package nftables.x86_64 1:0.8-14.el7 will be installed
+--> Processing Dependency: libnftnl.so.7(LIBNFTNL_5)(64bit) for package: 1:nftab                                                                                        les-0.8-14.el7.x86_64
+--> Processing Dependency: libnftnl.so.7()(64bit) for package: 1:nftables-0.8-14                                                                                        .el7.x86_64
+---> Package runc.x86_64 0:1.0.0-67.rc10.el7_8 will be installed
+--> Processing Dependency: criu for package: runc-1.0.0-67.rc10.el7_8.x86_64
+---> Package slirp4netns.x86_64 0:0.4.3-4.el7_8 will be installed
+--> Running transaction check
+---> Package criu.x86_64 0:3.12-2.el7 will be installed
+--> Processing Dependency: libprotobuf-c.so.1(LIBPROTOBUF_C_1.0.0)(64bit) for pa                                                                                        ckage: criu-3.12-2.el7.x86_64
+--> Processing Dependency: libprotobuf-c.so.1()(64bit) for package: criu-3.12-2.                                                                                        el7.x86_64
+--> Processing Dependency: libnet.so.1()(64bit) for package: criu-3.12-2.el7.x86                                                                                        _64
+---> Package fuse3-libs.x86_64 0:3.6.1-4.el7 will be installed
+---> Package libnftnl.x86_64 0:1.0.8-3.el7 will be installed
+---> Package policycoreutils-python.x86_64 0:2.5-34.el7 will be installed
+--> Processing Dependency: policycoreutils = 2.5-34.el7 for package: policycoreu                                                                                        tils-python-2.5-34.el7.x86_64
+--> Processing Dependency: setools-libs >= 3.3.8-4 for package: policycoreutils-                                                                                        python-2.5-34.el7.x86_64
+--> Processing Dependency: libsemanage-python >= 2.5-14 for package: policycoreu                                                                                        tils-python-2.5-34.el7.x86_64
+--> Processing Dependency: audit-libs-python >= 2.1.3-4 for package: policycoreu                                                                                        tils-python-2.5-34.el7.x86_64
+--> Processing Dependency: python-IPy for package: policycoreutils-python-2.5-34                                                                                        .el7.x86_64
+--> Processing Dependency: libqpol.so.1(VERS_1.4)(64bit) for package: policycore                                                                                        utils-python-2.5-34.el7.x86_64
+--> Processing Dependency: libqpol.so.1(VERS_1.2)(64bit) for package: policycore                                                                                        utils-python-2.5-34.el7.x86_64
+--> Processing Dependency: libcgroup for package: policycoreutils-python-2.5-34.                                                                                        el7.x86_64
+--> Processing Dependency: libapol.so.4(VERS_4.0)(64bit) for package: policycore                                                                                        utils-python-2.5-34.el7.x86_64
+--> Processing Dependency: checkpolicy for package: policycoreutils-python-2.5-3                                                                                        4.el7.x86_64
+--> Processing Dependency: libqpol.so.1()(64bit) for package: policycoreutils-py                                                                                        thon-2.5-34.el7.x86_64
+--> Processing Dependency: libapol.so.4()(64bit) for package: policycoreutils-py                                                                                        thon-2.5-34.el7.x86_64
+---> Package selinux-policy.noarch 0:3.13.1-192.el7 will be updated
+---> Package selinux-policy.noarch 0:3.13.1-268.el7 will be an update
+--> Processing Dependency: libsemanage >= 2.5-13 for package: selinux-policy-3.1                                                                                        3.1-268.el7.noarch
+---> Package selinux-policy-targeted.noarch 0:3.13.1-192.el7 will be updated
+---> Package selinux-policy-targeted.noarch 0:3.13.1-268.el7 will be an update
+---> Package subscription-manager.x86_64 0:1.24.42-1.el7.centos will be installe                                                                                        d
+--> Processing Dependency: subscription-manager-rhsm = 1.24.42 for package: subs                                                                                        cription-manager-1.24.42-1.el7.centos.x86_64
+--> Processing Dependency: python-dmidecode >= 3.12.2-2 for package: subscriptio                                                                                        n-manager-1.24.42-1.el7.centos.x86_64
+--> Processing Dependency: usermode for package: subscription-manager-1.24.42-1.                                                                                        el7.centos.x86_64
+--> Processing Dependency: python-syspurpose for package: subscription-manager-1                                                                                        .24.42-1.el7.centos.x86_64
+--> Processing Dependency: python-six for package: subscription-manager-1.24.42-                                                                                        1.el7.centos.x86_64
+--> Processing Dependency: python-setuptools for package: subscription-manager-1                                                                                        .24.42-1.el7.centos.x86_64
+--> Processing Dependency: python-inotify for package: subscription-manager-1.24                                                                                        .42-1.el7.centos.x86_64
+--> Processing Dependency: python-ethtool for package: subscription-manager-1.24                                                                                        .42-1.el7.centos.x86_64
+--> Processing Dependency: python-dateutil for package: subscription-manager-1.2                                                                                        4.42-1.el7.centos.x86_64
+--> Running transaction check
+---> Package audit-libs-python.x86_64 0:2.8.5-4.el7 will be installed
+--> Processing Dependency: audit-libs(x86-64) = 2.8.5-4.el7 for package: audit-l                                                                                        ibs-python-2.8.5-4.el7.x86_64
+---> Package checkpolicy.x86_64 0:2.5-8.el7 will be installed
+---> Package libcgroup.x86_64 0:0.41-21.el7 will be installed
+---> Package libnet.x86_64 0:1.1.6-7.el7 will be installed
+---> Package libsemanage.x86_64 0:2.5-11.el7 will be updated
+---> Package libsemanage.x86_64 0:2.5-14.el7 will be an update
+--> Processing Dependency: libsepol >= 2.5-10 for package: libsemanage-2.5-14.el                                                                                        7.x86_64
+--> Processing Dependency: libselinux >= 2.5-14 for package: libsemanage-2.5-14.                                                                                        el7.x86_64
+---> Package libsemanage-python.x86_64 0:2.5-14.el7 will be installed
+---> Package policycoreutils.x86_64 0:2.5-22.el7 will be updated
+---> Package policycoreutils.x86_64 0:2.5-34.el7 will be an update
+--> Processing Dependency: libselinux-utils >= 2.5-14 for package: policycoreuti                                                                                        ls-2.5-34.el7.x86_64
+---> Package protobuf-c.x86_64 0:1.0.2-3.el7 will be installed
+---> Package python-IPy.noarch 0:0.75-6.el7 will be installed
+---> Package python-dateutil.noarch 0:1.5-7.el7 will be installed
+---> Package python-dmidecode.x86_64 0:3.12.2-4.el7 will be installed
+--> Processing Dependency: libxml2-python for package: python-dmidecode-3.12.2-4                                                                                        .el7.x86_64
+--> Processing Dependency: libxml2mod.so()(64bit) for package: python-dmidecode-                                                                                        3.12.2-4.el7.x86_64
+---> Package python-ethtool.x86_64 0:0.8-8.el7 will be installed
+--> Processing Dependency: libnl.so.1()(64bit) for package: python-ethtool-0.8-8                                                                                        .el7.x86_64
+---> Package python-inotify.noarch 0:0.9.4-4.el7 will be installed
+---> Package python-setuptools.noarch 0:0.9.8-7.el7 will be installed
+--> Processing Dependency: python-backports-ssl_match_hostname for package: pyth                                                                                        on-setuptools-0.9.8-7.el7.noarch
+---> Package python-six.noarch 0:1.9.0-2.el7 will be installed
+---> Package python-syspurpose.x86_64 0:1.24.42-1.el7.centos will be installed
+---> Package setools-libs.x86_64 0:3.3.8-4.el7 will be installed
+---> Package subscription-manager-rhsm.x86_64 0:1.24.42-1.el7.centos will be ins                                                                                        talled
+--> Processing Dependency: subscription-manager-rhsm-certificates = 1.24.42-1.el                                                                                        7.centos for package: subscription-manager-rhsm-1.24.42-1.el7.centos.x86_64
+---> Package usermode.x86_64 0:1.111-6.el7 will be installed
+--> Running transaction check
+---> Package audit-libs.x86_64 0:2.8.1-3.el7 will be updated
+--> Processing Dependency: audit-libs(x86-64) = 2.8.1-3.el7 for package: audit-2                                                                                        .8.1-3.el7.x86_64
+---> Package audit-libs.x86_64 0:2.8.5-4.el7 will be an update
+---> Package libnl.x86_64 0:1.1.4-3.el7 will be installed
+---> Package libselinux.x86_64 0:2.5-12.el7 will be updated
+--> Processing Dependency: libselinux(x86-64) = 2.5-12.el7 for package: libselin                                                                                        ux-python-2.5-12.el7.x86_64
+---> Package libselinux.x86_64 0:2.5-15.el7 will be an update
+---> Package libselinux-utils.x86_64 0:2.5-12.el7 will be updated
+---> Package libselinux-utils.x86_64 0:2.5-15.el7 will be an update
+---> Package libsepol.x86_64 0:2.5-8.1.el7 will be updated
+---> Package libsepol.x86_64 0:2.5-10.el7 will be an update
+---> Package libxml2-python.x86_64 0:2.9.1-6.el7.5 will be installed
+--> Processing Dependency: libxml2 = 2.9.1-6.el7.5 for package: libxml2-python-2                                                                                        .9.1-6.el7.5.x86_64
+---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 will be                                                                                         installed
+--> Processing Dependency: python-ipaddress for package: python-backports-ssl_ma                                                                                        tch_hostname-3.5.0.1-1.el7.noarch
+--> Processing Dependency: python-backports for package: python-backports-ssl_ma                                                                                        tch_hostname-3.5.0.1-1.el7.noarch
+---> Package subscription-manager-rhsm-certificates.x86_64 0:1.24.42-1.el7.cento                                                                                        s will be installed
+--> Running transaction check
+---> Package audit.x86_64 0:2.8.1-3.el7 will be updated
+---> Package audit.x86_64 0:2.8.5-4.el7 will be an update
+---> Package libselinux-python.x86_64 0:2.5-12.el7 will be updated
+---> Package libselinux-python.x86_64 0:2.5-15.el7 will be an update
+---> Package libxml2.x86_64 0:2.9.1-6.el7_2.3 will be updated
+---> Package libxml2.x86_64 0:2.9.1-6.el7.5 will be an update
+---> Package python-backports.x86_64 0:1.0-8.el7 will be installed
+---> Package python-ipaddress.noarch 0:1.0.16-2.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                          Arch   Version                   Repository
+                                                                           Size
+================================================================================
+Installing:
+ podman-docker                    noarch 1.6.4-22.el7_9            extras  30 k
+Installing for dependencies:
+ audit-libs-python                x86_64 2.8.5-4.el7               base    76 k
+ checkpolicy                      x86_64 2.5-8.el7                 base   295 k
+ conmon                           x86_64 2:2.0.8-1.el7             extras  31 k
+ container-selinux                noarch 2:2.119.2-1.911c772.el7_8 extras  40 k
+ containernetworking-plugins      x86_64 0.8.3-3.el7.centos        extras  20 M
+ containers-common                x86_64 1:0.1.40-11.el7_8         extras  43 k
+ criu                             x86_64 3.12-2.el7                base   453 k
+ fuse-overlayfs                   x86_64 0.7.2-6.el7_8             extras  54 k
+ fuse3-libs                       x86_64 3.6.1-4.el7               extras  82 k
+ libcgroup                        x86_64 0.41-21.el7               base    66 k
+ libnet                           x86_64 1.1.6-7.el7               base    59 k
+ libnftnl                         x86_64 1.0.8-3.el7               base    78 k
+ libnl                            x86_64 1.1.4-3.el7               base   128 k
+ libsemanage-python               x86_64 2.5-14.el7                base   113 k
+ libxml2-python                   x86_64 2.9.1-6.el7.5             base   247 k
+ nftables                         x86_64 1:0.8-14.el7              base   186 k
+ podman                           x86_64 1.6.4-22.el7_9            extras  13 M
+ policycoreutils-python           x86_64 2.5-34.el7                base   457 k
+ protobuf-c                       x86_64 1.0.2-3.el7               base    28 k
+ python-IPy                       noarch 0.75-6.el7                base    32 k
+ python-backports                 x86_64 1.0-8.el7                 base   5.8 k
+ python-backports-ssl_match_hostname
+                                  noarch 3.5.0.1-1.el7             base    13 k
+ python-dateutil                  noarch 1.5-7.el7                 base    85 k
+ python-dmidecode                 x86_64 3.12.2-4.el7              base    83 k
+ python-ethtool                   x86_64 0.8-8.el7                 base    34 k
+ python-inotify                   noarch 0.9.4-4.el7               base    49 k
+ python-ipaddress                 noarch 1.0.16-2.el7              base    34 k
+ python-setuptools                noarch 0.9.8-7.el7               base   397 k
+ python-six                       noarch 1.9.0-2.el7               base    29 k
+ python-syspurpose                x86_64 1.24.42-1.el7.centos      base   273 k
+ runc                             x86_64 1.0.0-67.rc10.el7_8       extras 2.7 M
+ setools-libs                     x86_64 3.3.8-4.el7               base   620 k
+ slirp4netns                      x86_64 0.4.3-4.el7_8             extras  81 k
+ subscription-manager             x86_64 1.24.42-1.el7.centos      base   1.1 M
+ subscription-manager-rhsm        x86_64 1.24.42-1.el7.centos      base   331 k
+ subscription-manager-rhsm-certificates
+                                  x86_64 1.24.42-1.el7.centos      base   236 k
+ usermode                         x86_64 1.111-6.el7               base   193 k
+Updating for dependencies:
+ audit                            x86_64 2.8.5-4.el7               base   256 k
+ audit-libs                       x86_64 2.8.5-4.el7               base   102 k
+ libselinux                       x86_64 2.5-15.el7                base   162 k
+ libselinux-python                x86_64 2.5-15.el7                base   236 k
+ libselinux-utils                 x86_64 2.5-15.el7                base   151 k
+ libsemanage                      x86_64 2.5-14.el7                base   151 k
+ libsepol                         x86_64 2.5-10.el7                base   297 k
+ libxml2                          x86_64 2.9.1-6.el7.5             base   668 k
+ policycoreutils                  x86_64 2.5-34.el7                base   917 k
+ selinux-policy                   noarch 3.13.1-268.el7            base   497 k
+ selinux-policy-targeted          noarch 3.13.1-268.el7            base   7.0 M
+
+Transaction Summary
+================================================================================
+Install  1 Package  (+37 Dependent packages)
+Upgrade             ( 11 Dependent packages)
+
+Total download size: 52 M
+Is this ok [y/d/N]: y
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+(1/49): audit-libs-2.8.5-4.el7.x86_64.rpm                  | 102 kB   00:00
+(2/49): audit-libs-python-2.8.5-4.el7.x86_64.rpm           |  76 kB   00:00
+(3/49): audit-2.8.5-4.el7.x86_64.rpm                       | 256 kB   00:01
+(4/49): checkpolicy-2.5-8.el7.x86_64.rpm                   | 295 kB   00:00
+(5/49): conmon-2.0.8-1.el7.x86_64.rpm                      |  31 kB   00:00
+(6/49): container-selinux-2.119.2-1.911c772.el7_8.noarch.r |  40 kB   00:00
+(7/49): containers-common-0.1.40-11.el7_8.x86_64.rpm       |  43 kB   00:00
+(8/49): fuse-overlayfs-0.7.2-6.el7_8.x86_64.rpm            |  54 kB   00:00
+(9/49): fuse3-libs-3.6.1-4.el7.x86_64.rpm                  |  82 kB   00:00
+(10/49): libcgroup-0.41-21.el7.x86_64.rpm                  |  66 kB   00:00
+(11/49): criu-3.12-2.el7.x86_64.rpm                        | 453 kB   00:01
+(12/49): libnet-1.1.6-7.el7.x86_64.rpm                     |  59 kB   00:00
+(13/49): libnftnl-1.0.8-3.el7.x86_64.rpm                   |  78 kB   00:00
+(14/49): libselinux-2.5-15.el7.x86_64.rpm                  | 162 kB   00:00
+(15/49): libnl-1.1.4-3.el7.x86_64.rpm                      | 128 kB   00:00
+(16/49): libselinux-python-2.5-15.el7.x86_64.rpm           | 236 kB   00:00
+(17/49): libselinux-utils-2.5-15.el7.x86_64.rpm            | 151 kB   00:00
+(18/49): libsepol-2.5-10.el7.x86_64.rpm                    | 297 kB   00:00
+(19/49): libsemanage-python-2.5-14.el7.x86_64.rpm          | 113 kB   00:01
+(20/49): nftables-0.8-14.el7.x86_64.rpm                    | 186 kB   00:00
+(21/49): libxml2-python-2.9.1-6.el7.5.x86_64.rpm           | 247 kB   00:00
+(22/49): containernetworking-plugins-0.8.3-3.el7.centos.x8 |  20 MB   00:04
+(23/49): policycoreutils-2.5-34.el7.x86_64.rpm             | 917 kB   00:00
+(24/49): policycoreutils-python-2.5-34.el7.x86_64.rpm      | 457 kB   00:00
+(25/49): protobuf-c-1.0.2-3.el7.x86_64.rpm                 |  28 kB   00:00
+(26/49): libxml2-2.9.1-6.el7.5.x86_64.rpm                  | 668 kB   00:01
+(27/49): python-IPy-0.75-6.el7.noarch.rpm                  |  32 kB   00:00
+(28/49): python-backports-1.0-8.el7.x86_64.rpm             | 5.8 kB   00:00
+(29/49): python-backports-ssl_match_hostname-3.5.0.1-1.el7 |  13 kB   00:00
+(30/49): python-dmidecode-3.12.2-4.el7.x86_64.rpm          |  83 kB   00:00
+(31/49): python-ethtool-0.8-8.el7.x86_64.rpm               |  34 kB   00:00
+(32/49): python-dateutil-1.5-7.el7.noarch.rpm              |  85 kB   00:00
+(33/49): python-inotify-0.9.4-4.el7.noarch.rpm             |  49 kB   00:00
+(34/49): libsemanage-2.5-14.el7.x86_64.rpm                 | 151 kB   00:03
+(35/49): podman-docker-1.6.4-22.el7_9.noarch.rpm           |  30 kB   00:01
+(36/49): python-ipaddress-1.0.16-2.el7.noarch.rpm          |  34 kB   00:00
+(37/49): python-syspurpose-1.24.42-1.el7.centos.x86_64.rpm | 273 kB   00:00
+(38/49): python-six-1.9.0-2.el7.noarch.rpm                 |  29 kB   00:00
+(39/49): python-setuptools-0.9.8-7.el7.noarch.rpm          | 397 kB   00:00
+(40/49): selinux-policy-3.13.1-268.el7.noarch.rpm          | 497 kB   00:01
+(41/49): runc-1.0.0-67.rc10.el7_8.x86_64.rpm               | 2.7 MB   00:01
+(42/49): setools-libs-3.3.8-4.el7.x86_64.rpm               | 620 kB   00:01
+(43/49): subscription-manager-rhsm-1.24.42-1.el7.centos.x8 | 331 kB   00:00
+(44/49): slirp4netns-0.4.3-4.el7_8.x86_64.rpm              |  81 kB   00:00
+(45/49): subscription-manager-1.24.42-1.el7.centos.x86_64. | 1.1 MB   00:00
+(46/49): subscription-manager-rhsm-certificates-1.24.42-1. | 236 kB   00:00
+(47/49): usermode-1.111-6.el7.x86_64.rpm                   | 193 kB   00:00
+(48/49): podman-1.6.4-22.el7_9.x86_64.rpm                  |  13 MB   00:06
+(49/49): selinux-policy-targeted-3.13.1-268.el7.noarch.rpm | 7.0 MB   00:05
+--------------------------------------------------------------------------------
+Total                                              4.0 MB/s |  52 MB  00:12
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libsepol-2.5-10.el7.x86_64                                  1/60
+  Updating   : libselinux-2.5-15.el7.x86_64                                2/60
+  Updating   : audit-libs-2.8.5-4.el7.x86_64                               3/60
+  Updating   : libsemanage-2.5-14.el7.x86_64                               4/60
+  Updating   : libxml2-2.9.1-6.el7.5.x86_64                                5/60
+  Updating   : libselinux-utils-2.5-15.el7.x86_64                          6/60
+  Updating   : policycoreutils-2.5-34.el7.x86_64                           7/60
+  Updating   : selinux-policy-3.13.1-268.el7.noarch                        8/60
+  Installing : slirp4netns-0.4.3-4.el7_8.x86_64                            9/60
+  Installing : python-six-1.9.0-2.el7.noarch                              10/60
+  Installing : python-dateutil-1.5-7.el7.noarch                           11/60
+  Updating   : selinux-policy-targeted-3.13.1-268.el7.noarch              12/60
+  Installing : libxml2-python-2.9.1-6.el7.5.x86_64                        13/60
+  Installing : python-dmidecode-3.12.2-4.el7.x86_64                       14/60
+  Installing : setools-libs-3.3.8-4.el7.x86_64                            15/60
+  Installing : libsemanage-python-2.5-14.el7.x86_64                       16/60
+  Installing : audit-libs-python-2.8.5-4.el7.x86_64                       17/60
+  Updating   : libselinux-python-2.5-15.el7.x86_64                        18/60
+  Installing : usermode-1.111-6.el7.x86_64                                19/60
+  Installing : libcgroup-0.41-21.el7.x86_64                               20/60
+  Installing : libnftnl-1.0.8-3.el7.x86_64                                21/60
+  Installing : 1:nftables-0.8-14.el7.x86_64                               22/60
+  Installing : 2:conmon-2.0.8-1.el7.x86_64                                23/60
+  Installing : subscription-manager-rhsm-certificates-1.24.42-1.el7.cen   24/60
+  Installing : subscription-manager-rhsm-1.24.42-1.el7.centos.x86_64      25/60
+  Installing : python-syspurpose-1.24.42-1.el7.centos.x86_64              26/60
+  Installing : libnl-1.1.4-3.el7.x86_64                                   27/60
+  Installing : python-ethtool-0.8-8.el7.x86_64                            28/60
+  Installing : libnet-1.1.6-7.el7.x86_64                                  29/60
+  Installing : python-backports-1.0-8.el7.x86_64                          30/60
+  Installing : protobuf-c-1.0.2-3.el7.x86_64                              31/60
+  Installing : criu-3.12-2.el7.x86_64                                     32/60
+  Installing : containernetworking-plugins-0.8.3-3.el7.centos.x86_64      33/60
+  Installing : python-IPy-0.75-6.el7.noarch                               34/60
+  Installing : checkpolicy-2.5-8.el7.x86_64                               35/60
+  Installing : policycoreutils-python-2.5-34.el7.x86_64                   36/60
+  Installing : 2:container-selinux-2.119.2-1.911c772.el7_8.noarch         37/60
+  Installing : runc-1.0.0-67.rc10.el7_8.x86_64                            38/60
+  Installing : python-ipaddress-1.0.16-2.el7.noarch                       39/60
+  Installing : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch   40/60
+  Installing : python-setuptools-0.9.8-7.el7.noarch                       41/60
+  Installing : fuse3-libs-3.6.1-4.el7.x86_64                              42/60
+  Installing : fuse-overlayfs-0.7.2-6.el7_8.x86_64                        43/60
+  Installing : python-inotify-0.9.4-4.el7.noarch                          44/60
+  Installing : subscription-manager-1.24.42-1.el7.centos.x86_64           45/60
+  Installing : 1:containers-common-0.1.40-11.el7_8.x86_64                 46/60
+  Installing : podman-1.6.4-22.el7_9.x86_64                               47/60
+  Installing : podman-docker-1.6.4-22.el7_9.noarch                        48/60
+  Updating   : audit-2.8.5-4.el7.x86_64                                   49/60
+  Cleanup    : selinux-policy-targeted-3.13.1-192.el7.noarch              50/60
+  Cleanup    : selinux-policy-3.13.1-192.el7.noarch                       51/60
+  Cleanup    : policycoreutils-2.5-22.el7.x86_64                          52/60
+  Cleanup    : libsemanage-2.5-11.el7.x86_64                              53/60
+  Cleanup    : libselinux-utils-2.5-12.el7.x86_64                         54/60
+  Cleanup    : libselinux-python-2.5-12.el7.x86_64                        55/60
+  Cleanup    : libselinux-2.5-12.el7.x86_64                               56/60
+  Cleanup    : audit-2.8.1-3.el7.x86_64                                   57/60
+  Cleanup    : audit-libs-2.8.1-3.el7.x86_64                              58/60
+  Cleanup    : libsepol-2.5-8.1.el7.x86_64                                59/60
+  Cleanup    : libxml2-2.9.1-6.el7_2.3.x86_64                             60/60
+  Verifying  : podman-1.6.4-22.el7_9.x86_64                                1/60
+  Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch    2/60
+  Verifying  : python-ethtool-0.8-8.el7.x86_64                             3/60
+  Verifying  : fuse-overlayfs-0.7.2-6.el7_8.x86_64                         4/60
+  Verifying  : selinux-policy-targeted-3.13.1-268.el7.noarch               5/60
+  Verifying  : libselinux-2.5-15.el7.x86_64                                6/60
+  Verifying  : 1:nftables-0.8-14.el7.x86_64                                7/60
+  Verifying  : python-inotify-0.9.4-4.el7.noarch                           8/60
+  Verifying  : subscription-manager-1.24.42-1.el7.centos.x86_64            9/60
+  Verifying  : fuse3-libs-3.6.1-4.el7.x86_64                              10/60
+  Verifying  : python-setuptools-0.9.8-7.el7.noarch                       11/60
+  Verifying  : 1:containers-common-0.1.40-11.el7_8.x86_64                 12/60
+  Verifying  : python-ipaddress-1.0.16-2.el7.noarch                       13/60
+  Verifying  : audit-libs-2.8.5-4.el7.x86_64                              14/60
+  Verifying  : checkpolicy-2.5-8.el7.x86_64                               15/60
+  Verifying  : libxml2-2.9.1-6.el7.5.x86_64                               16/60
+  Verifying  : python-dateutil-1.5-7.el7.noarch                           17/60
+  Verifying  : policycoreutils-2.5-34.el7.x86_64                          18/60
+  Verifying  : python-dmidecode-3.12.2-4.el7.x86_64                       19/60
+  Verifying  : python-IPy-0.75-6.el7.noarch                               20/60
+  Verifying  : libselinux-utils-2.5-15.el7.x86_64                         21/60
+  Verifying  : policycoreutils-python-2.5-34.el7.x86_64                   22/60
+  Verifying  : python-six-1.9.0-2.el7.noarch                              23/60
+  Verifying  : containernetworking-plugins-0.8.3-3.el7.centos.x86_64      24/60
+  Verifying  : protobuf-c-1.0.2-3.el7.x86_64                              25/60
+  Verifying  : runc-1.0.0-67.rc10.el7_8.x86_64                            26/60
+  Verifying  : audit-2.8.5-4.el7.x86_64                                   27/60
+  Verifying  : libsemanage-python-2.5-14.el7.x86_64                       28/60
+  Verifying  : python-backports-1.0-8.el7.x86_64                          29/60
+  Verifying  : libsemanage-2.5-14.el7.x86_64                              30/60
+  Verifying  : slirp4netns-0.4.3-4.el7_8.x86_64                           31/60
+  Verifying  : subscription-manager-rhsm-1.24.42-1.el7.centos.x86_64      32/60
+  Verifying  : libsepol-2.5-10.el7.x86_64                                 33/60
+  Verifying  : criu-3.12-2.el7.x86_64                                     34/60
+  Verifying  : libxml2-python-2.9.1-6.el7.5.x86_64                        35/60
+  Verifying  : libselinux-python-2.5-15.el7.x86_64                        36/60
+  Verifying  : libnet-1.1.6-7.el7.x86_64                                  37/60
+  Verifying  : audit-libs-python-2.8.5-4.el7.x86_64                       38/60
+  Verifying  : 2:container-selinux-2.119.2-1.911c772.el7_8.noarch         39/60
+  Verifying  : usermode-1.111-6.el7.x86_64                                40/60
+  Verifying  : libnl-1.1.4-3.el7.x86_64                                   41/60
+  Verifying  : selinux-policy-3.13.1-268.el7.noarch                       42/60
+  Verifying  : python-syspurpose-1.24.42-1.el7.centos.x86_64              43/60
+  Verifying  : podman-docker-1.6.4-22.el7_9.noarch                        44/60
+  Verifying  : subscription-manager-rhsm-certificates-1.24.42-1.el7.cen   45/60
+  Verifying  : 2:conmon-2.0.8-1.el7.x86_64                                46/60
+  Verifying  : libnftnl-1.0.8-3.el7.x86_64                                47/60
+  Verifying  : setools-libs-3.3.8-4.el7.x86_64                            48/60
+  Verifying  : libcgroup-0.41-21.el7.x86_64                               49/60
+  Verifying  : libsemanage-2.5-11.el7.x86_64                              50/60
+  Verifying  : audit-libs-2.8.1-3.el7.x86_64                              51/60
+  Verifying  : policycoreutils-2.5-22.el7.x86_64                          52/60
+  Verifying  : libselinux-python-2.5-12.el7.x86_64                        53/60
+  Verifying  : libxml2-2.9.1-6.el7_2.3.x86_64                             54/60
+  Verifying  : selinux-policy-targeted-3.13.1-192.el7.noarch              55/60
+  Verifying  : audit-2.8.1-3.el7.x86_64                                   56/60
+  Verifying  : libsepol-2.5-8.1.el7.x86_64                                57/60
+  Verifying  : selinux-policy-3.13.1-192.el7.noarch                       58/60
+  Verifying  : libselinux-2.5-12.el7.x86_64                               59/60
+  Verifying  : libselinux-utils-2.5-12.el7.x86_64                         60/60
+
+Installed:
+  podman-docker.noarch 0:1.6.4-22.el7_9
+
+Dependency Installed:
+  audit-libs-python.x86_64 0:2.8.5-4.el7
+  checkpolicy.x86_64 0:2.5-8.el7
+  conmon.x86_64 2:2.0.8-1.el7
+  container-selinux.noarch 2:2.119.2-1.911c772.el7_8
+  containernetworking-plugins.x86_64 0:0.8.3-3.el7.centos
+  containers-common.x86_64 1:0.1.40-11.el7_8
+  criu.x86_64 0:3.12-2.el7
+  fuse-overlayfs.x86_64 0:0.7.2-6.el7_8
+  fuse3-libs.x86_64 0:3.6.1-4.el7
+  libcgroup.x86_64 0:0.41-21.el7
+  libnet.x86_64 0:1.1.6-7.el7
+  libnftnl.x86_64 0:1.0.8-3.el7
+  libnl.x86_64 0:1.1.4-3.el7
+  libsemanage-python.x86_64 0:2.5-14.el7
+  libxml2-python.x86_64 0:2.9.1-6.el7.5
+  nftables.x86_64 1:0.8-14.el7
+  podman.x86_64 0:1.6.4-22.el7_9
+  policycoreutils-python.x86_64 0:2.5-34.el7
+  protobuf-c.x86_64 0:1.0.2-3.el7
+  python-IPy.noarch 0:0.75-6.el7
+  python-backports.x86_64 0:1.0-8.el7
+  python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7
+  python-dateutil.noarch 0:1.5-7.el7
+  python-dmidecode.x86_64 0:3.12.2-4.el7
+  python-ethtool.x86_64 0:0.8-8.el7
+  python-inotify.noarch 0:0.9.4-4.el7
+  python-ipaddress.noarch 0:1.0.16-2.el7
+  python-setuptools.noarch 0:0.9.8-7.el7
+  python-six.noarch 0:1.9.0-2.el7
+  python-syspurpose.x86_64 0:1.24.42-1.el7.centos
+  runc.x86_64 0:1.0.0-67.rc10.el7_8
+  setools-libs.x86_64 0:3.3.8-4.el7
+  slirp4netns.x86_64 0:0.4.3-4.el7_8
+  subscription-manager.x86_64 0:1.24.42-1.el7.centos
+  subscription-manager-rhsm.x86_64 0:1.24.42-1.el7.centos
+  subscription-manager-rhsm-certificates.x86_64 0:1.24.42-1.el7.centos
+  usermode.x86_64 0:1.111-6.el7
+
+Dependency Updated:
+  audit.x86_64 0:2.8.5-4.el7
+  audit-libs.x86_64 0:2.8.5-4.el7
+  libselinux.x86_64 0:2.5-15.el7
+  libselinux-python.x86_64 0:2.5-15.el7
+  libselinux-utils.x86_64 0:2.5-15.el7
+  libsemanage.x86_64 0:2.5-14.el7
+  libsepol.x86_64 0:2.5-10.el7
+  libxml2.x86_64 0:2.9.1-6.el7.5
+  policycoreutils.x86_64 0:2.5-34.el7
+  selinux-policy.noarch 0:3.13.1-268.el7
+  selinux-policy-targeted.noarch 0:3.13.1-268.el7
+
+Complete!
+[root@registry2 ~]# podman login registry.redhat.io
+Username: shrinivasbhope1
+Password:
+^[[D^C
+[root@registry2 ~]# podman login registry.redhat.io
+Username: shrinivasbhope1
+Password:
+Login Succeeded!
+[root@registry2 ~]# cat images | awk '{print $2}' | grep ^registry.redhat.io | w                                                                                        hile read IMAGE_NAME
+> do
+>   podman pull ${IMAGE_NAME}:${TAG}
+>   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/)
+>   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.152:5000/${IMAGE_PATH}:${TAG}
+>   podman push 192.168.4.152:5000/${IMAGE_PATH}:${TAG}
+> done
+Error: error pulling image "registry.redhat.io/rhosp/openstack-designate-api-rhe                                                                                        l8:": unable to pull registry.redhat.io/rhosp/openstack-designate-api-rhel8:: er                                                                                        ror getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-aodh-notifi                                                                                        er:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-aodh-notifier:: er                                                                                        ror getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-barbican-ap                                                                                        i:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-barbican-api:: erro                                                                                        r getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-barbican-wo                                                                                        rker:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-barbican-worker:                                                                                        : error getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-ceilometer-                                                                                        base:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-ceilometer-base:                                                                                        : error getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-ceilometer-                                                                                        ipmi:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-ceilometer-ipmi:                                                                                        : error getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-cinder-api:                                                                                        ": unable to pull registry.redhat.io/rhosp-rhel8/openstack-cinder-api:: error ge                                                                                        tting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-dependencie                                                                                        s:": unable to pull registry.redhat.io/rhosp-rhel8/openstack-dependencies:: erro                                                                                        r getting default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-collectd:":                                                                                         unable to pull registry.redhat.io/rhosp-rhel8/openstack-collectd:: error gettin                                                                                        g default registries to try: invalid reference format
+Error: invalid reference format
+Error: invalid reference format
+Error: error pulling image "registry.redhat.io/rhosp-rhel8/openstack-etcd:": una                                                                                        ble to pull registry.redhat.io/rhosp-rhel8/openstack-etcd:: error getting defaul                                                                                        t registries to try: invalid reference format
+^C
+[root@registry2 ~]# export TAG=16.1
+[root@registry2 ~]# cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.152:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.152:5000/${IMAGE_PATH}:${TAG}; done
+Trying to pull registry.redhat.io/rhosp/openstack-designate-api-rhel8:16.1...
+Getting image source signatures
+Copying blob b788b306ea2b done
+Copying blob 77617a25e98a done
+Copying blob c4d668e229cd done
+Copying blob 4387a5c8f7be done
+Copying blob ec1681b6a383 done
+Copying blob 089e5c48597f done
+Copying config e0b3b23762 [======================================] 4.3KiB / 4.3KiB
+Writing manifest to image destination
+Storing signatures
+e0b3b2376259e376cb2d93c4fef85867b22ccc4027213df49eaa2c087982567c
+Getting image source signatures
+Error: Error copying image to the remote destination: Error trying to reuse blob sha256:ccf04fbd6e1943f648d1c2980e96038edc02b543c597556098ab2bcaa4fd1fa8 at destination: error pinging docker registry 192.168.4.152:5000: Get https://192.168.4.152:5000/v2/: http: server gave HTTP response to HTTPS client
+Trying to pull registry.redhat.io/rhosp-rhel8/openstack-aodh-notifier:16.1...
+Getting image source signatures
+Copying blob ec1681b6a383 skipped: already exists
+Copying blob c4d668e229cd skipped: already exists
+Copying blob 089e5c48597f skipped: already exists
+Copying blob 4387a5c8f7be skipped: already exists
+Copying blob c22d1f8ab905 done
+Copying blob 57e6d1186680 done
+Copying config 00b108a4f8 [======================================] 4.3KiB / 4.3KiB
+Writing manifest to image destination
+Storing signatures
+00b108a4f8c724495a28a01979f95742deddd154a9d7158b33f3725aa7ff2a97
+Getting image source signatures
+Error: Error copying image to the remote destination: Error trying to reuse blob sha256:ccf04fbd6e1943f648d1c2980e96038edc02b543c597556098ab2bcaa4fd1fa8 at destination: error pinging docker registry 192.168.4.152:5000: Get https://192.168.4.152:5000/v2/: http: server gave HTTP response to HTTPS client
+Trying to pull registry.redhat.io/rhosp-rhel8/openstack-barbican-api:16.1...
+^C
+[root@registry2 ~]# podman images
+REPOSITORY                                               TAG    IMAGE ID       CREATED       SIZE
+registry.redhat.io/rhosp/openstack-designate-api-rhel8   16.1   e0b3b2376259   4 weeks ago   706 MB
+192.168.4.152:5000/rhosp/openstack-designate-api-rhel8   16.1   e0b3b2376259   4 weeks ago   706 MB
+192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier   16.1   00b108a4f8c7   4 weeks ago   747 MB
+registry.redhat.io/rhosp-rhel8/openstack-aodh-notifier   16.1   00b108a4f8c7   4 weeks ago   747 MB
+[root@registry2 ~]# podman push 192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier  --tls-verify='false'
+Error: unable to find '192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier' in local storage: no such image
+[root@registry2 ~]# podman push 192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier:16.1  --tls-verify='false'
+Getting image source signatures
+Copying blob 0bee0ce13ec4 done
+Copying blob b7b591e3443f done
+Copying blob 9a052c6ea051 done
+Copying blob 18ed701d3a70 done
+Copying blob f683707ecd7c done
+Copying blob ccf04fbd6e19 done
+Copying config 00b108a4f8 done
+Writing manifest to image destination
+Storing signatures
+[root@registry2 ~]# cd /var/lib/registry/
+[root@registry2 registry]# ls
+docker
+[root@registry2 registry]# cd
+[root@registry2 ~]#
+[root@registry2 ~]# cd /var/lib/registry/docker/
+[root@registry2 docker]# ls
+registry
+[root@registry2 docker]# cd registry/
+[root@registry2 registry]# ls
+v2
+[root@registry2 registry]# cd v2/
+blobs/        repositories/
+[root@registry2 registry]# cd v2/
+blobs/        repositories/
+[root@registry2 registry]# cd v2/repositories/rhosp-rhel8/openstack-aodh-notifier/_^C
+[root@registry2 registry]#
+[root@registry2 registry]#
+[root@registry2 registry]# cd
+[root@registry2 ~]#
+[root@registry2 ~]#
+[root@registry2 ~]#
