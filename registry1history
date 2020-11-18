@@ -1,0 +1,283 @@
+[root@registry1 ~]# history
+    1  yum install podman-docker
+    2  podman run -d -p 5000:5000 --restart=always --name registry registry:2
+    3  docker search registry.access.redhat.com/rhosp12
+    4  docker search registry.access.redhat.com/rhosp16
+    5  docker search registry.access.redhat.com/rhosp15
+    6  docker search registry.access.redhat.com/rhosp14
+    7  sudo podman search --limit 1000 "registry.redhat.io/rhosp"
+    8  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+    9  sudo podman search "registry.redhat.io/rhosp" |
+   10  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | grep -i ceph
+   11  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   12  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+   13  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph" | wc -l
+   14  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph"
+   15  sudo podman search --limit 1000 "registry.redhat.io/rhceph4" | wc -l
+   16  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   17  sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+   18  sudo podman search --limit 1000 "registry.redhat.io/rhceph" >> images
+   19  sudo podman search --limit 1000 "registry.redhat.io/rhosp" >> images
+   20  cat images | wc -l
+   21  cat images
+   22  export TAG=16.1
+   23  echo $TAG
+   24  cat images
+   25  cat images | wc -l
+   26  docker pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+   27  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+   28  podman login registry.redhat.io
+   29  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+   30  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+   31  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server cut -f2- -d/
+   32  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server | cut -f2- -d/
+   33  cat images
+   34  echo $TAG
+   35  ip a
+   36  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   docker pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   docker tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   docker push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+   37  yum install podman-docker
+   38  podman run -d -p 5000:5000 --restart=always --name registry registry:2
+   39  docker search registry.access.redhat.com/rhosp12
+   40  docker search registry.access.redhat.com/rhosp16
+   41  docker search registry.access.redhat.com/rhosp15
+   42  docker search registry.access.redhat.com/rhosp14
+   43  sudo podman search --limit 1000 "registry.redhat.io/rhosp"
+   44  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+   45  sudo podman search "registry.redhat.io/rhosp" |
+   46  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | grep -i ceph
+   47  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   48  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+   49  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph" | wc -l
+   50  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph"
+   51  sudo podman search --limit 1000 "registry.redhat.io/rhceph4" | wc -l
+   52  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   53  sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+   54  sudo podman search --limit 1000 "registry.redhat.io/rhceph" >> images
+   55  sudo podman search --limit 1000 "registry.redhat.io/rhosp" >> images
+   56  cat images | wc -l
+   57  cat images
+   58  export TAG=16.1
+   59  echo $TAG
+   60  cat images
+   61  cat images | wc -l
+   62  docker pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+   63  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+   64  podman login registry.redhat.io
+   65  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+   66  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+   67  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server cut -f2- -d/
+   68  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server | cut -f2- -d/
+   69  cat images
+   70  echo $TAG
+   71  ip a
+   72  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   docker pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   docker tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   docker push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+   73  cat images
+   74  cat images | awk '{print $2}'
+   75  cat images | awk '{print $2}' | grep ^registry.redhat.io
+   76  podman images
+   77  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+   78  yum install podman-docker
+   79  podman run -d -p 5000:5000 --restart=always --name registry registry:2
+   80  docker search registry.access.redhat.com/rhosp12
+   81  docker search registry.access.redhat.com/rhosp16
+   82  docker search registry.access.redhat.com/rhosp15
+   83  docker search registry.access.redhat.com/rhosp14
+   84  sudo podman search --limit 1000 "registry.redhat.io/rhosp"
+   85  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+   86  sudo podman search "registry.redhat.io/rhosp" |
+   87  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | grep -i ceph
+   88  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   89  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+   90  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph" | wc -l
+   91  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph"
+   92  sudo podman search --limit 1000 "registry.redhat.io/rhceph4" | wc -l
+   93  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+   94  sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+   95  sudo podman search --limit 1000 "registry.redhat.io/rhceph" >> images
+   96  sudo podman search --limit 1000 "registry.redhat.io/rhosp" >> images
+   97  cat images | wc -l
+   98  cat images
+   99  export TAG=16.1
+  100  echo $TAG
+  101  cat images
+  102  cat images | wc -l
+  103  docker pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  104  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  105  podman login registry.redhat.io
+  106  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  107  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  108  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server cut -f2- -d/
+  109  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server | cut -f2- -d/
+  110  cat images
+  111  echo $TAG
+  112  ip a
+  113  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   docker pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   docker tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   docker push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  114  cat images
+  115  cat images | awk '{print $2}'
+  116  cat images | awk '{print $2}' | grep ^registry.redhat.io
+  117  podman images
+  118  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  119  sudo podman search --limit 1000 "registry.redhat.io/rhosp" > images
+  120  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  121  yum install podman-docker
+  122  podman run -d -p 5000:5000 --restart=always --name registry registry:2
+  123  docker search registry.access.redhat.com/rhosp12
+  124  docker search registry.access.redhat.com/rhosp16
+  125  docker search registry.access.redhat.com/rhosp15
+  126  docker search registry.access.redhat.com/rhosp14
+  127  sudo podman search --limit 1000 "registry.redhat.io/rhosp"
+  128  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+  129  sudo podman search "registry.redhat.io/rhosp" |
+  130  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | grep -i ceph
+  131  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+  132  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+  133  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph" | wc -l
+  134  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph"
+  135  sudo podman search --limit 1000 "registry.redhat.io/rhceph4" | wc -l
+  136  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+  137  sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+  138  sudo podman search --limit 1000 "registry.redhat.io/rhceph" >> images
+  139  sudo podman search --limit 1000 "registry.redhat.io/rhosp" >> images
+  140  cat images | wc -l
+  141  cat images
+  142  export TAG=16.1
+  143  echo $TAG
+  144  cat images
+  145  cat images | wc -l
+  146  docker pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  147  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  148  podman login registry.redhat.io
+  149  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  150  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  151  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server cut -f2- -d/
+  152  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server | cut -f2- -d/
+  153  cat images
+  154  echo $TAG
+  155  ip a
+  156  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   docker pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   docker tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   docker push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  157  cat images
+  158  cat images | awk '{print $2}'
+  159  cat images | awk '{print $2}' | grep ^registry.redhat.io
+  160  podman images
+  161  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  162  sudo podman search --limit 1000 "registry.redhat.io/rhosp" > images
+  163  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  164  yum install net-tools -y
+  165  netstat -tulpn | grep -i 5000
+  166  curl 192.168.4.151/v1/_catalog
+  167  curl 192.168.4.151/v2/_catalog
+  168  systemctl status firewalld
+  169  systemctl stop firewalld
+  170  setenforce 0
+  171  curl 192.168.4.151/v2/_catalog
+  172  vi /etc/containers/registries.conf
+  173  podman ps -a
+  174  podman images
+  175  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  176  yum install podman-docker
+  177  podman run -d -p 5000:5000 --restart=always --name registry registry:2
+  178  docker search registry.access.redhat.com/rhosp12
+  179  docker search registry.access.redhat.com/rhosp16
+  180  docker search registry.access.redhat.com/rhosp15
+  181  docker search registry.access.redhat.com/rhosp14
+  182  sudo podman search --limit 1000 "registry.redhat.io/rhosp"
+  183  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+  184  sudo podman search "registry.redhat.io/rhosp" |
+  185  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | grep -i ceph
+  186  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+  187  sudo podman search --limit 1000 "registry.redhat.io/rhosp" | wc -l
+  188  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph" | wc -l
+  189  sudo podman search --limit 1000 "registry.access.redhat.com/rhceph"
+  190  sudo podman search --limit 1000 "registry.redhat.io/rhceph4" | wc -l
+  191  sudo podman search --limit 1000 "registry.redhat.io/rhceph" | wc -l
+  192  sudo podman search --limit 1000 "registry.redhat.io/rhceph"
+  193  sudo podman search --limit 1000 "registry.redhat.io/rhceph" >> images
+  194  sudo podman search --limit 1000 "registry.redhat.io/rhosp" >> images
+  195  cat images | wc -l
+  196  cat images
+  197  export TAG=16.1
+  198  echo $TAG
+  199  cat images
+  200  cat images | wc -l
+  201  docker pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  202  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  203  podman login registry.redhat.io
+  204  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server
+  205  podman pull registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server:16.1
+  206  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server cut -f2- -d/
+  207  echo registry.redhat.io/rhosp-rhel8/openstack-swift-proxy-server | cut -f2- -d/
+  208  cat images
+  209  echo $TAG
+  210  ip a
+  211  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   docker pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   docker tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   docker push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  212  cat images
+  213  cat images | awk '{print $2}'
+  214  cat images | awk '{print $2}' | grep ^registry.redhat.io
+  215  podman images
+  216  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  217  sudo podman search --limit 1000 "registry.redhat.io/rhosp" > images
+  218  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  219  yum install net-tools -y
+  220  netstat -tulpn | grep -i 5000
+  221  curl 192.168.4.151/v1/_catalog
+  222  curl 192.168.4.151/v2/_catalog
+  223  systemctl status firewalld
+  224  systemctl stop firewalld
+  225  setenforce 0
+  226  curl 192.168.4.151/v2/_catalog
+  227  vi /etc/containers/registries.conf
+  228  podman ps -a
+  229  podman images
+  230  cat images | awk '{print $2}' | grep ^registry.redhat.io | while read IMAGE_NAME; do   podman pull ${IMAGE_NAME}:${TAG};   IMAGE_PATH=$(echo ${IMAGE_NAME} | cut -f2- -d/);   podman tag ${IMAGE_NAME}:${TAG} 192.168.4.151:5000/${IMAGE_PATH}:${TAG};   podman push 192.168.4.151:5000/${IMAGE_PATH}:${TAG}; done
+  231  podman push --help
+  232  podman images
+  233  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-barbican-api:16.1 --tls-verify=false
+  234  vi /etc/containers/registries.conf
+  235  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-barbican-api:16.1 --tls-verify=false
+  236  reboot
+  237  podman ps
+  238  podman exec -ti f6aad87dca90 /bin/sh
+  239  podman push --help
+  240  ip a
+  241  curl -k 192.168.4.151/v2/
+  242  curl -k 192.168.4.151/v1
+  243  curl -k 192.168.4.151/v1/_catalog
+  244  podman ps -a
+  245  podman images
+  246  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-aodh-notifier:16.1
+  247  docker push --help
+  248  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-aodh-notifier:16.1  --tls-verify=false --remove-signatures
+  249  docker push 192.168.4.151:5000/rhosp-rhel8/openstack-aodh-notifier:16.1  --tls-verify=false --remove-signatures
+  250  ping 192.168.4.151
+  251  podman exec -ti f6aad87dca90 /bin/sh
+  252  podman images
+  253  podman tag 192.168.4.151:5000/rhosp/openstack-designate-api-rhel8 localhost:5000/rhosp/openstack-designate-api-rhel8
+  254  podman tag 192.168.4.151:5000/rhosp/openstack-designate-api-rhel8:16.1 localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  255  podman push localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  256  podman push -v localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  257  podman push --v localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  258  podman push -v localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  259  podman push localhost:5000/rhosp/openstack-designate-api-rhel8:16.1
+  260  podman push localhost:5000/rhosp/openstack-designate-api-rhel8:16.1 --tls-verify='false' | cat
+  261  podman images
+  262  podman tag registry.redhat.io/rhosp-rhel8/openstack-barbican-api:16.1 192.168.4.151:5000/barbican:16.1
+  263  podman push 192.168.4.151:5000/barbican:16.1
+  264  podman push 192.168.4.151:5000/barbican:16.1 --tls-verify='false'
+  265  podman push 192.168.4.151:5000/barbican:16.1
+  266  yum module
+  267  yum --help | grep -i module
+  268  yum search container
+  269  cat images
+  270  scp images 192.168.4.152:~
+  271  ip a
+  272  mkdir /var/lib/registry
+  273  podman run -d -p 5000:5000 -v /var/lib/registry:/var/lib/registry --restart=always --name registry1 registry:2
+  274  podman images
+  275  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-barbican-api:16.1
+  276  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-barbican-api:16.1 --tls-verify='false'
+  277  podman ps -a
+  278  podman push 192.168.4.151:5000/rhosp-rhel8/openstack-barbican-api:16.1
+  279  docker pull 192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier:16.1
+  280  docker pull 192.168.4.152:5000/rhosp-rhel8/openstack-aodh-notifier:16.1 --tls-verify='false'
+  281  podman images
+  282  history
