@@ -1,0 +1,73 @@
+virt-install --virt-type=kvm --name centos8 --ram 2048 --vcpus=1 --os-variant=centos8 --cdrom=/var/lib/libvirt/boot/CentOS-8.2.2004-x86_64-minimal.iso --network=bridge=br0,model=virtio --network=bridge=br1,model=virtio --graphics vnc,port=5901,listen=0.0.0.0 --disk path=/var/lib/libvirt/images/centos8.qcow2,size=15,bus=virtio,format=qcow2
+
+grep -i vmx /proc/cpuinfo
+
+[root@localhost network-scripts]# cat ifcfg-br0
+DEVICE="br0"
+BOOTPROTO=none
+IPADDR=192.168.1.3
+PREFIX=24
+DEFROUTE=yes
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+ONBOOT="yes"
+TYPE="Bridge"
+DELAY="0"
+[root@localhost network-scripts]#
+[root@localhost network-scripts]#
+[root@localhost network-scripts]#
+[root@localhost network-scripts]# cat ifcfg-br1
+DEVICE="br1"
+BOOTPROTO=none
+IPADDR=192.168.4.155
+PREFIX=24
+DEFROUTE=yes
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+ONBOOT="yes"
+TYPE="Bridge"
+DELAY="0"
+[root@localhost network-scripts]#
+
+
+
+
+[root@localhost network-scripts]# cat ifcfg-bond0
+BONDING_OPTS=mode=active-backup
+TYPE=Bond
+BONDING_MASTER=yes
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=bond0
+UUID=dfc9dd56-5956-40d4-8d56-f809a99ef6db
+DEVICE=bond0
+ONBOOT=yes
+BRIDGE=br1
+[root@localhost network-scripts]#
+[root@localhost network-scripts]#
+[root@localhost network-scripts]#
+[root@localhost network-scripts]# cat ifcfg-ens33
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens33
+DEVICE=ens33
+ONBOOT=yes
+BRIDGE=br0
+[root@localhost network-scripts]#
